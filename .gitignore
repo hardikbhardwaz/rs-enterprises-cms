@@ -20,8 +20,8 @@ HOSTINGER_ENV_VARIABLES*.txt
 build/
 dist/
 
-# Uploaded Media (Preserve repository lightweight; persistent storage on host)
-public/uploads/*
+# Uploaded Media (Keep production media out of GitHub)
+public/uploads/
 !public/uploads/.gitkeep
 
 # Local SQLite Database Files
