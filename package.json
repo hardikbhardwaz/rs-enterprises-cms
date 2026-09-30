@@ -1,0 +1,46 @@
+{
+    "name":  "rs-enterprises-cms",
+    "version":  "0.1.0",
+    "private":  true,
+    "description":  "A Strapi application",
+    "scripts":  {
+                    "build":  "strapi build",
+                    "console":  "strapi console",
+                    "deploy":  "strapi deploy",
+                    "dev":  "strapi develop",
+                    "develop":  "strapi develop",
+                    "start":  "strapi start",
+                    "strapi":  "strapi",
+                    "upgrade":  "npx @strapi/upgrade latest",
+                    "upgrade:dry":  "npx @strapi/upgrade latest --dry"
+                },
+    "dependencies":  {
+                         "@strapi/database":  "5.55.1",
+                         "@strapi/plugin-cloud":  "5.55.1",
+                         "@strapi/plugin-users-permissions":  "5.55.1",
+                         "@strapi/strapi":  "5.55.1",
+                         "better-sqlite3":  "12.8.0",
+                         "mysql2":  "^3.24.5",
+                         "react":  "^18.0.0",
+                         "react-dom":  "^18.0.0",
+                         "react-router-dom":  "^6.30.3",
+                         "styled-components":  "^6.0.0"
+                     },
+    "devDependencies":  {
+                            "@types/node":  "^20",
+                            "@types/react":  "^18",
+                            "@types/react-dom":  "^18",
+                            "typescript":  "^5"
+                        },
+    "engines":  {
+                    "node":  "\u003e=20.0.0 \u003c=26.x.x",
+                    "npm":  "\u003e=6.0.0"
+                },
+    "strapi":  {
+                   "uuid":  "68ed79a2-782c-4c01-bf84-745d749f312c",
+                   "installId":  "eaaad7ad42ea56521ca54abd57e00555dc5e18351fdaec610a2fe3b22ef27eae"
+               },
+    "overrides":  {
+                      "@swc/core":  "1.10.18"
+                  }
+}
