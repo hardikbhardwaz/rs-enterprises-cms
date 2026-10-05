@@ -6,6 +6,9 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Server =>
   app: {
     keys: env.array('APP_KEYS')!,
   },
+  dirs: {
+    public: env('STRAPI_PUBLIC_DIR', './public'),
+  },
   webhooks: {
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },

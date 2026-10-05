@@ -1,4 +1,4 @@
-﻿import type { Core } from '@strapi/strapi';
+import type { Core } from '@strapi/strapi';
 
 export default ({ env }: Core.Config.Shared.ConfigParams) => ({
   host: env('HOST', '0.0.0.0'),
@@ -7,5 +7,8 @@ export default ({ env }: Core.Config.Shared.ConfigParams) => ({
   proxy: true,
   app: {
     keys: env.array('APP_KEYS'),
+  },
+  dirs: {
+    public: env('STRAPI_PUBLIC_DIR', './public'),
   },
 });
