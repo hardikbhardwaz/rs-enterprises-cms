@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_elements_social_links",
+  "info": {
+    "displayName": "Social Link",
+    "icon": "share",
+    "description": "Official corporate social profile link"
+  },
+  "options": {},
+  "attributes": {
+    "platform": {
+      "type": "enumeration",
+      "enum": [
+        "linkedin",
+        "youtube",
+        "instagram",
+        "facebook",
+        "twitter"
+      ],
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_settings",
+  "info": {
+    "singularName": "site-settings",
+    "pluralName": "site-settings-list",
+    "displayName": "Site Settings",
+    "description": "Global corporate branding, navigation header, footer columns, and default SEO"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "companyName": {
+      "type": "string",
+      "required": true
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "primaryPhone": {
+      "type": "string"
+    },
+    "primaryEmail": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "favicon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "socialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.social-link"
+    },
+    "headerNav": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.nav-item"
+    },
+    "footerColumns": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.footer-column"
+    },
+    "defaultSeo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_elements_stat_items",
+  "info": {
+    "displayName": "Stat Item",
+    "icon": "chartBubble",
+    "description": "Numeric telemetry or achievement metric"
+  },
+  "options": {},
+  "attributes": {
+    "numericTarget": {
+      "type": "integer"
+    },
+    "suffix": {
+      "type": "string"
+    },
+    "staticValue": {
+      "type": "string"
+    },
+    "labelLine1": {
+      "type": "string",
+      "required": true
+    },
+    "labelLine2": {
+      "type": "string"
+    }
+  }
+}

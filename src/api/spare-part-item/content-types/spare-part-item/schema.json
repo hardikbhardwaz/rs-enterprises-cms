@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "spare_part_items",
+  "info": {
+    "singularName": "spare-part-item",
+    "pluralName": "spare-part-items",
+    "displayName": "Spare Part Item",
+    "description": "Industrial spare part items and replacement components"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "partNumber": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "spec": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "compatibleMachines": {
+      "type": "json"
+    },
+    "inStock": {
+      "type": "boolean",
+      "default": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

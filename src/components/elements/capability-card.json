@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_elements_capability_cards",
+  "info": {
+    "displayName": "Capability Card",
+    "icon": "cog",
+    "description": "Manufacturing capability or engineering competency"
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

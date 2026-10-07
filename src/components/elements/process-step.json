@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_elements_process_steps",
+  "info": {
+    "displayName": "Process Step",
+    "icon": "arrowRight",
+    "description": "Turnkey engineering lifecycle phase or operational step"
+  },
+  "options": {},
+  "attributes": {
+    "stepNumber": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}

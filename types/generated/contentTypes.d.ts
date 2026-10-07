@@ -443,6 +443,393 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAboutAbout extends Struct.SingleTypeSchema {
+  collectionName: 'abouts';
+  info: {
+    description: 'Corporate history, vision, manufacturing capabilities, and founder leadership';
+    displayName: 'About';
+    pluralName: 'abouts';
+    singularName: 'about';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    capabilities: Schema.Attribute.Component<'elements.capability-card', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    eyebrow: Schema.Attribute.String;
+    founderDesignation: Schema.Attribute.String;
+    founderQuote: Schema.Attribute.Text;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    headingHighlight: Schema.Attribute.String;
+    heroImage: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
+      Schema.Attribute.Private;
+    metrics: Schema.Attribute.Component<'elements.stat-item', true>;
+    mission: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    purpose: Schema.Attribute.Text;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    values: Schema.Attribute.JSON;
+    vision: Schema.Attribute.Text;
+  };
+}
+
+export interface ApiClientClient extends Struct.CollectionTypeSchema {
+  collectionName: 'clients';
+  info: {
+    description: 'Corporate client and industrial partner brands';
+    displayName: 'Client';
+    pluralName: 'clients';
+    singularName: 'client';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    companyName: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    displayOrder: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    industry: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::client.client'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    website: Schema.Attribute.String;
+  };
+}
+
+export interface ApiContactContact extends Struct.SingleTypeSchema {
+  collectionName: 'contacts';
+  info: {
+    description: 'Corporate coordinates, manufacturing facility location, and RFQ configuration';
+    displayName: 'Contact';
+    pluralName: 'contacts';
+    singularName: 'contact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contactDetails: Schema.Attribute.Component<'elements.contact-detail', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact.contact'
+    > &
+      Schema.Attribute.Private;
+    locations: Schema.Attribute.Text;
+    operatingHours: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    rfqFormConfig: Schema.Attribute.JSON;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    subheading: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomeHome extends Struct.SingleTypeSchema {
+  collectionName: 'homes';
+  info: {
+    description: 'Homepage configuration, rotating hero slides, and editorial sections';
+    displayName: 'Home';
+    pluralName: 'homes';
+    singularName: 'home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aboutPreviewDescription: Schema.Attribute.Text;
+    aboutPreviewTitle: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    finalCta: Schema.Attribute.Component<'elements.cta', false>;
+    founderAuthor: Schema.Attribute.String;
+    founderQuote: Schema.Attribute.Text;
+    heroSlides: Schema.Attribute.Component<'elements.hero-slide', true>;
+    heroStats: Schema.Attribute.Component<'elements.stat-item', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    whyChooseDescription: Schema.Attribute.Text;
+    whyChooseTitle: Schema.Attribute.String;
+  };
+}
+
+export interface ApiLegalPagesLegalPages extends Struct.SingleTypeSchema {
+  collectionName: 'legal_pages';
+  info: {
+    description: 'Privacy policy and commercial terms & conditions';
+    displayName: 'Legal Pages';
+    pluralName: 'legal-pages-list';
+    singularName: 'legal-pages';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::legal-pages.legal-pages'
+    > &
+      Schema.Attribute.Private;
+    privacyPolicyContent: Schema.Attribute.RichText;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    termsContent: Schema.Attribute.RichText;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProductProduct extends Struct.CollectionTypeSchema {
+  collectionName: 'products';
+  info: {
+    description: 'Industrial machinery, packaging machines, net bagging and material handling systems';
+    displayName: 'Product';
+    pluralName: 'products';
+    singularName: 'product';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    applications: Schema.Attribute.JSON;
+    brochure: Schema.Attribute.Media<'files'>;
+    category: Schema.Attribute.Enumeration<
+      ['packaging-machines', 'net-bagging', 'material-handling']
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    features: Schema.Attribute.JSON;
+    gallery: Schema.Attribute.Media<'images', true>;
+    headline: Schema.Attribute.String;
+    heroImage: Schema.Attribute.Media<'images'>;
+    industries: Schema.Attribute.JSON;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product.product'
+    > &
+      Schema.Attribute.Private;
+    model: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    relatedProducts: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::product.product'
+    >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    shortDescription: Schema.Attribute.Text;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    specifications: Schema.Attribute.Component<'elements.spec-row', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    variants: Schema.Attribute.Component<'elements.product-variant', true>;
+    video: Schema.Attribute.Media<'videos' | 'files'>;
+    videoUrl: Schema.Attribute.String;
+  };
+}
+
+export interface ApiSiteSettingsSiteSettings extends Struct.SingleTypeSchema {
+  collectionName: 'site_settings';
+  info: {
+    description: 'Global corporate branding, navigation header, footer columns, and default SEO';
+    displayName: 'Site Settings';
+    pluralName: 'site-settings-list';
+    singularName: 'site-settings';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    address: Schema.Attribute.Text;
+    companyName: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
+    description: Schema.Attribute.Text;
+    favicon: Schema.Attribute.Media<'images'>;
+    footerColumns: Schema.Attribute.Component<'elements.footer-column', true>;
+    headerNav: Schema.Attribute.Component<'elements.nav-item', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::site-settings.site-settings'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'>;
+    primaryEmail: Schema.Attribute.String;
+    primaryPhone: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    socialLinks: Schema.Attribute.Component<'elements.social-link', true>;
+    tagline: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
+  collectionName: 'solutions';
+  info: {
+    description: 'Turnkey cement and mortar processing plant systems';
+    displayName: 'Solution';
+    pluralName: 'solutions';
+    singularName: 'solution';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    associatedEquipment: Schema.Attribute.JSON;
+    brochure: Schema.Attribute.Media<'files'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    diagramImage: Schema.Attribute.Media<'images'>;
+    gallery: Schema.Attribute.Media<'images', true>;
+    headline: Schema.Attribute.String;
+    heroImage: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::solution.solution'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    processSteps: Schema.Attribute.Component<'elements.process-step', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    scopeOfWork: Schema.Attribute.JSON;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    shortDescription: Schema.Attribute.Text;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    standardCapacities: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video: Schema.Attribute.Media<'videos' | 'files'>;
+    videoUrl: Schema.Attribute.String;
+  };
+}
+
+export interface ApiSparePartItemSparePartItem
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'spare_part_items';
+  info: {
+    description: 'Industrial spare part items and replacement components';
+    displayName: 'Spare Part Item';
+    pluralName: 'spare-part-items';
+    singularName: 'spare-part-item';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.String & Schema.Attribute.Required;
+    compatibleMachines: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    inStock: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::spare-part-item.spare-part-item'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    partNumber: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
+    spec: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSparePartsPageSparePartsPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'spare_parts_pages';
+  info: {
+    description: 'Spare parts catalogue editorial introduction and category filters';
+    displayName: 'Spare Parts Page';
+    pluralName: 'spare-parts-pages';
+    singularName: 'spare-parts-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categoryLabels: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    intro: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::spare-parts-page.spare-parts-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    subheading: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -954,6 +1341,16 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::about.about': ApiAboutAbout;
+      'api::client.client': ApiClientClient;
+      'api::contact.contact': ApiContactContact;
+      'api::home.home': ApiHomeHome;
+      'api::legal-pages.legal-pages': ApiLegalPagesLegalPages;
+      'api::product.product': ApiProductProduct;
+      'api::site-settings.site-settings': ApiSiteSettingsSiteSettings;
+      'api::solution.solution': ApiSolutionSolution;
+      'api::spare-part-item.spare-part-item': ApiSparePartItemSparePartItem;
+      'api::spare-parts-page.spare-parts-page': ApiSparePartsPageSparePartsPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

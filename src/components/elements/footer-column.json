@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_elements_footer_columns",
+  "info": {
+    "displayName": "Footer Column",
+    "icon": "bulletList",
+    "description": "Categorized footer link list"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.nav-item"
+    }
+  }
+}

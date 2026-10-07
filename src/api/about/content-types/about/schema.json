@@ -1,0 +1,70 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About",
+    "description": "Corporate history, vision, manufacturing capabilities, and founder leadership"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "headingHighlight": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "metrics": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.stat-item"
+    },
+    "founderQuote": {
+      "type": "text"
+    },
+    "founderDesignation": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "text"
+    },
+    "vision": {
+      "type": "text"
+    },
+    "mission": {
+      "type": "text"
+    },
+    "values": {
+      "type": "json"
+    },
+    "capabilities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.capability-card"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

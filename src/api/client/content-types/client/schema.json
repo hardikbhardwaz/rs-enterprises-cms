@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "singularName": "client",
+    "pluralName": "clients",
+    "displayName": "Client",
+    "description": "Corporate client and industrial partner brands"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "companyName": {
+      "type": "string",
+      "required": true
+    },
+    "industry": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "website": {
+      "type": "string"
+    },
+    "displayOrder": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

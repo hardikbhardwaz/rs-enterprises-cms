@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact",
+    "description": "Corporate coordinates, manufacturing facility location, and RFQ configuration"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "subheading": {
+      "type": "string"
+    },
+    "contactDetails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.contact-detail"
+    },
+    "locations": {
+      "type": "text"
+    },
+    "operatingHours": {
+      "type": "string"
+    },
+    "rfqFormConfig": {
+      "type": "json"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

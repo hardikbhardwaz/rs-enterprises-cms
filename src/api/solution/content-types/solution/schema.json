@@ -1,0 +1,92 @@
+{
+  "kind": "collectionType",
+  "collectionName": "solutions",
+  "info": {
+    "singularName": "solution",
+    "pluralName": "solutions",
+    "displayName": "Solution",
+    "description": "Turnkey cement and mortar processing plant systems"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "headline": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "diagramImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "scopeOfWork": {
+      "type": "json"
+    },
+    "standardCapacities": {
+      "type": "string"
+    },
+    "processSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.process-step"
+    },
+    "associatedEquipment": {
+      "type": "json"
+    },
+    "brochure": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "videos",
+        "files"
+      ]
+    },
+    "videoUrl": {
+      "type": "string"
+    }
+  }
+}

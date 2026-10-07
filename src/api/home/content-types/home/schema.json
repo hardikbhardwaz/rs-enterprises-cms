@@ -1,0 +1,54 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home",
+    "description": "Homepage configuration, rotating hero slides, and editorial sections"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroSlides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.hero-slide"
+    },
+    "heroStats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.stat-item"
+    },
+    "aboutPreviewTitle": {
+      "type": "string"
+    },
+    "aboutPreviewDescription": {
+      "type": "text"
+    },
+    "founderQuote": {
+      "type": "text"
+    },
+    "founderAuthor": {
+      "type": "string"
+    },
+    "whyChooseTitle": {
+      "type": "string"
+    },
+    "whyChooseDescription": {
+      "type": "text"
+    },
+    "finalCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.cta"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

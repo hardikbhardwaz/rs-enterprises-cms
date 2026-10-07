@@ -1,0 +1,107 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": "Industrial machinery, packaging machines, net bagging and material handling systems"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "model": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "packaging-machines",
+        "net-bagging",
+        "material-handling"
+      ],
+      "required": true
+    },
+    "headline": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "videoUrl": {
+      "type": "string"
+    },
+    "brochure": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "features": {
+      "type": "json"
+    },
+    "applications": {
+      "type": "json"
+    },
+    "industries": {
+      "type": "json"
+    },
+    "specifications": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.spec-row"
+    },
+    "variants": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.product-variant"
+    },
+    "relatedProducts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "videos",
+        "files"
+      ]
+    }
+  }
+}

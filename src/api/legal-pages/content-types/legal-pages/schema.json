@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "legal_pages",
+  "info": {
+    "singularName": "legal-pages",
+    "pluralName": "legal-pages-list",
+    "displayName": "Legal Pages",
+    "description": "Privacy policy and commercial terms & conditions"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "privacyPolicyContent": {
+      "type": "richtext"
+    },
+    "termsContent": {
+      "type": "richtext"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

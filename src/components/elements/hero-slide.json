@@ -1,0 +1,57 @@
+{
+  "collectionName": "components_elements_hero_slides",
+  "info": {
+    "displayName": "Hero Slide",
+    "icon": "picture",
+    "description": "Rotating homepage banner slide"
+  },
+  "options": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "eyebrow": {
+      "type": "string"
+    },
+    "titleLine1": {
+      "type": "string",
+      "required": true
+    },
+    "titleLine2": {
+      "type": "string"
+    },
+    "titleHighlight": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "primaryCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.cta"
+    },
+    "secondaryCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.cta"
+    },
+    "desktopImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "badgeTitle": {
+      "type": "string"
+    },
+    "badgeSubtitle": {
+      "type": "string"
+    },
+    "badgeUrl": {
+      "type": "string"
+    }
+  }
+}
